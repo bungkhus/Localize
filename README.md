@@ -56,13 +56,8 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 2.3.0'
+    pod 'Localize' , :git => 'https://github.com/bungkhus/Localize.git'
 end
-
-# If you are using Swift 4.x
-# target '<Your Target Name>' do
-#    pod 'Localize' , :git => 'https://github.com/bungkhus/Localize.git'
-# end
 ```
 
 Then, run the following command:
