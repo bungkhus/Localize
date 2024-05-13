@@ -23,7 +23,7 @@ open class LocalizeCommonProtocol: LocalizeProtocol {
     }
 
     /// Name for storaged Json Files
-    /// The rule for name is fileName-LanguageKey.json
+    /// The rule for name is fileName_LanguageKey.json
     open var fileName = "lang"
 
     /// Bundle used to load files from.
