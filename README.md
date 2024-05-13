@@ -120,14 +120,14 @@ You can decide if you want use JSON or Apple Strings, we support both, if you de
 Please create a JSON file in your code with this rule:
 
 ```strings
-{your file name}-{your lang code}.json
+{your file name}_{your lang code}.json
 ```
 
 For example
 
-- lang-en.json
-- lang-es.json
-- lang-fr.json
+- lang_en.json
+- lang_es.json
+- lang_fr.json
 
 Example JSON File
 
