@@ -77,7 +77,7 @@ class LocalizeJson: LocalizeCommonProtocol {
         var languages: [String] = []
 
         for localeId in NSLocale.availableLocaleIdentifiers {
-            let name = "\(fileName)-\(localeId)"
+            let name = "\(fileName)_\(localeId)"
             let path = bundle.path(forResource: name, ofType: "json")
             if path != nil {
                 languages.append(localeId)
@@ -95,14 +95,14 @@ class LocalizeJson: LocalizeCommonProtocol {
     private func readJSON(tableName: String? = nil) -> JSON? {
         let tableName = tableName ?? fileName
         var lang = currentLanguage
-        var json = JSON.read(bundle: bundle, named: "\(tableName)-\(lang)")
+        var json = JSON.read(bundle: bundle, named: "\(tableName)_\(lang)")
 
         if json != nil {
             return json
         }
 
-        lang = lang.components(separatedBy: "-")[0]
-        json = JSON.read(bundle: bundle, named: "\(tableName)-\(lang)")
+        lang = lang.components(separatedBy: "_")[0]
+        json = JSON.read(bundle: bundle, named: "\(tableName)_\(lang)")
 
         if json == nil && lang != defaultLanguage {
             json = readDefaultJSON()
@@ -116,7 +116,7 @@ class LocalizeJson: LocalizeCommonProtocol {
     /// - returns: json or nil value.
     private func readDefaultJSON(tableName: String? = nil) -> JSON? {
         let tableName = tableName ?? fileName
-        return JSON.read(bundle: bundle, named: "\(tableName)-\(defaultLanguage)")
+        return JSON.read(bundle: bundle, named: "\(tableName)_\(defaultLanguage)")
     }
 
     // MARK: Public methods
