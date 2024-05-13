@@ -61,7 +61,7 @@ end
 
 # If you are using Swift 4.x
 # target '<Your Target Name>' do
-#    pod 'Localize' , '~> 2.1.0'
+#    pod 'Localize' , :git => 'https://github.com/bungkhus/Localize.git'
 # end
 ```
 
